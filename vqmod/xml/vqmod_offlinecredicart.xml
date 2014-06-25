@@ -1,0 +1,13 @@
+<modification>
+    <id>Ofline Credi cart</id>
+    <version>1.0.0</version>
+    <vqmver>1.0.0</vqmver>
+    <author>mijosoft.com</author>
+
+    <file name="admin/view/template/common/header.tpl">
+        <operation error="log">
+            <search position="after"><![CDATA[<li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>]]></search>
+            <add><![CDATA[	<li><a href="<?php echo (((HTTPS_SERVER) ? HTTPS_SERVER : HTTP_SERVER) . 'index.php?option=com_mijoshop&route=sale/orderCC&token=' . $this->session->data['token']); ?>"> Order w/ CC</a></li>]]></add>
+        </operation>
+    </file>
+</modification>
